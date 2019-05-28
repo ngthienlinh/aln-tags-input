@@ -9,7 +9,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
-  interface MyComponent {
+  interface AlnTagsInput {
     /**
     * The first name
     */
@@ -26,7 +26,7 @@ export namespace Components {
 }
 
 declare namespace LocalJSX {
-  interface MyComponent extends JSXBase.HTMLAttributes {
+  interface AlnTagsInput extends JSXBase.HTMLAttributes {
     /**
     * The first name
     */
@@ -42,7 +42,7 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
-    'my-component': MyComponent;
+    'aln-tags-input': AlnTagsInput;
   }
 }
 
@@ -60,14 +60,14 @@ declare global {
 
 
 
-  interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  interface HTMLAlnTagsInputElement extends Components.AlnTagsInput, HTMLStencilElement {}
+  var HTMLAlnTagsInputElement: {
+    prototype: HTMLAlnTagsInputElement;
+    new (): HTMLAlnTagsInputElement;
   };
 
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'aln-tags-input': HTMLAlnTagsInputElement;
   }
 
   interface ElementTagNameMap extends HTMLElementTagNameMap {}

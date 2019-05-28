@@ -2,7 +2,7 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
-  namespace: 'aln-tags-input',
+  namespace: 'aln-controls',
   outputTargets: [
     {
       type: 'dist',
