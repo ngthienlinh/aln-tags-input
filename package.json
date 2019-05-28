@@ -1,7 +1,7 @@
 {
-  "name": "an-tags-input",
+  "name": "aln-tags-input",
   "version": "0.0.1",
-  "description": "ionic 4 tags input components",
+  "description": "Stencil Component Starter",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
@@ -9,7 +9,7 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/an-tags-input/an-tags-input.js",
+  "unpkg": "dist/aln-tags-input/aln-tags-input.js",
   "files": [
     "dist/",
     "loader/"
@@ -21,8 +21,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "devDependencies": {
-    "@stencil/core": "1.0.0-beta.5",
-    "@stencil/sass": "^0.2.3"
+    "@stencil/core": "1.0.0-beta.5"
   },
   "license": "MIT"
 }
