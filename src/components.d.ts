@@ -36,6 +36,11 @@ declare module "@stencil/core" {
 
 declare global {
 
+  // Adding a global JSX for backcompatibility with legacy dependencies
+  export namespace JSX {
+    export interface Element {}
+  }
+
 
 
   interface HTMLAlnTagsInputElement extends Components.AlnTagsInput, HTMLStencilElement {}

@@ -18,5 +18,6 @@ export const config: Config = {
   ],
   plugins: [
     sass()
-  ]
+  ],
+  globalScript: 'src/global/app.ts'
 };

@@ -1,1 +1,32 @@
+:host {
+    --tag-bg: green;
+}
 
+.tag-list {
+    margin: 0px;
+    padding: 0px;
+    display: inline;
+}
+
+.tag-list li {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: white;
+    padding: 5px;
+    margin: 0 5px 0 0;
+    border-radius: 5px;
+}
+
+.tag-input {
+    display: inline;
+}
+
+.tag-input input {
+    border: none;
+    border-bottom: solid 1px;
+    padding: 8px;
+}
+
+.btn-tag {
+    margin-left: 5px
+}
