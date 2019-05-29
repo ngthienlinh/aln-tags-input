@@ -10,35 +10,13 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface AlnTagsInput {
-    /**
-    * The first name
-    */
-    'first': string;
-    /**
-    * The last name
-    */
-    'last': string;
-    /**
-    * The middle name
-    */
-    'middle': string;
+    'tags': string[];
   }
 }
 
 declare namespace LocalJSX {
   interface AlnTagsInput extends JSXBase.HTMLAttributes {
-    /**
-    * The first name
-    */
-    'first'?: string;
-    /**
-    * The last name
-    */
-    'last'?: string;
-    /**
-    * The middle name
-    */
-    'middle'?: string;
+    'tags'?: string[];
   }
 
   interface IntrinsicElements {

@@ -1,5 +1,4 @@
-import { Component, Prop, h } from '@stencil/core';
-import { format } from '../../utils/utils';
+import { Component, Prop, h, State } from '@stencil/core';
 
 @Component({
   tag: 'aln-tags-input',
@@ -7,26 +6,41 @@ import { format } from '../../utils/utils';
   shadow: true
 })
 export class AlnTagsInputComponent {
+  
   /**
-   * The first name
+   * Internal prop. Render will be called whenever this state changed
    */
-  @Prop() first: string;
+  @State() tag: string;
+  
+  @Prop() tags: string[] = [];
 
-  /**
-   * The middle name
-   */
-  @Prop() middle: string;
+  handleChange(event) {
+    this.tag = event.target.value;
+  }
 
-  /**
-   * The last name
-   */
-  @Prop() last: string;
-
-  private getText(): string {
-    return format(this.first, this.middle, this.last);
+  handleSubmit(e) {
+    e.preventDefault()
+    if (this.tag && this.tags.indexOf(this.tag) == -1) {
+      this.tags = [...this.tags, this.tag ]
+      this.tag = ''
+    }
   }
 
   render() {
-    return <div>Hello, World! I'm {this.getText()}</div>;
+    return (
+      <div>
+        <ul>
+          {
+            this.tags.map(t => (
+              <li>{t}</li>
+            ))
+          }
+          <li></li>
+        </ul>
+        <form onSubmit={(e) => this.handleSubmit(e)}>
+          <input type="text" value={this.tag} onInput={(event) => this.handleChange(event)}  />
+        </form>
+      </div>
+    )
   }
 }
