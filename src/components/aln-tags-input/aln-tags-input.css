@@ -1,5 +1,7 @@
 :host {
     --tag-bg: green;
+    --tag-color: white;
+    --tag-border-radius: 5px;
 }
 
 .tag-list {
@@ -8,13 +10,18 @@
     display: inline;
 }
 
-.tag-list li {
+.tag-list .tag-outer {
     display: inline-block;
+    border-bottom: 1px solid black;
+    padding: 2px;
+}
+
+.tag-list .tag-inner {
     background: var(--tag-bg);
-    color: white;
+    color: var(--tag-color);
+    border-radius: var(--tag-border-radius);
     padding: 5px;
     margin: 0 5px 0 0;
-    border-radius: 5px;
 }
 
 .tag-input {
@@ -25,6 +32,10 @@
     border: none;
     border-bottom: solid 1px;
     padding: 8px;
+}
+
+.tag-input input:focus {
+    outline: none;
 }
 
 .btn-tag {
