@@ -1,6 +1,6 @@
 {
   "name": "aln-tags-input",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A stencil component for tags input",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
