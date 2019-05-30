@@ -14,7 +14,7 @@ export class AlnTagsInputComponent {
   
   @Prop() tags: string[] = [];
 
-  @Prop() tagsBelow: boolean;
+  @Prop() tagsBelow: boolean = false;
 
   handleChange(event) {
     this.tag = event.target.value;

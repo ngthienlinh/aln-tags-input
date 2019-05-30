@@ -7,12 +7,24 @@
 
 ## Properties
 
-| Property | Attribute | Description     | Type     | Default     |
-| -------- | --------- | --------------- | -------- | ----------- |
-| `first`  | `first`   | The first name  | `string` | `undefined` |
-| `last`   | `last`    | The last name   | `string` | `undefined` |
-| `middle` | `middle`  | The middle name | `string` | `undefined` |
+| Property    | Attribute    | Description | Type       | Default |
+| ----------- | ------------ | ----------- | ---------- | ------- |
+| `tags`      | --           |             | `string[]` | `[]`    |
+| `tagsBelow` | `tags-below` |             | `boolean`  | `false` |
 
+
+## Dependencies
+
+### Depends on
+
+- ion-icon
+
+### Graph
+```mermaid
+graph TD;
+  aln-tags-input --> ion-icon
+  style aln-tags-input fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
