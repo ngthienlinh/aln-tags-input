@@ -37,18 +37,20 @@ export class AlnTagsInputComponent {
   render() {
     return (
       <div>
-        <ul class="tag-list">
+        <div class="tag-list">
           {
             this.tags.map(t => (
-              <li>
-                {t}
-                <a class="btn-tag" onClick={() => this.removeTag(t)}>
-                  <ion-icon name="close" ></ion-icon>
-                </a>
-              </li>
+              <div class="tag-outer">
+                <div class="tag-inner">
+                  {t}
+                  <a class="btn-tag" onClick={() => this.removeTag(t)}>
+                    <ion-icon name="close" ></ion-icon>
+                  </a>
+                </div>
+              </div>
             ))
           }
-        </ul>
+        </div>
         <form onSubmit={(e) => this.handleSubmit(e)} class="tag-input">
           <input placeholder="tags" type="text" value={this.tag} onInput={(event) => this.handleChange(event)}  />
         </form>

@@ -12,7 +12,7 @@
 
 .tag-list .tag-outer {
     display: inline-block;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
     padding: 2px;
 }
 
