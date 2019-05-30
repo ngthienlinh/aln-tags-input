@@ -11,12 +11,14 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
   interface AlnTagsInput {
     'tags': string[];
+    'tagsBelow': boolean;
   }
 }
 
 declare namespace LocalJSX {
   interface AlnTagsInput extends JSXBase.HTMLAttributes {
     'tags'?: string[];
+    'tagsBelow'?: boolean;
   }
 
   interface IntrinsicElements {

@@ -14,6 +14,8 @@ export class AlnTagsInputComponent {
   
   @Prop() tags: string[] = [];
 
+  @Prop() tagsBelow: boolean;
+
   handleChange(event) {
     this.tag = event.target.value;
   }
@@ -35,29 +37,56 @@ export class AlnTagsInputComponent {
   }
 
   render() {
-    return (
-      <div>
-        <div class="tag-list">
-          {
-            this.tags.map(t => (
-              <div class="tag-outer">
-                <div class="tag-inner">
-                  {t}
-                  <a class="tag-btn-remove" onClick={() => this.removeTag(t)}>
-                    <ion-icon name="close" ></ion-icon>
-                  </a>
+    if (this.tagsBelow) {
+      return (
+        <div>
+            <form onSubmit={(e) => this.handleSubmit(e)} class="tag-input">
+              <input placeholder="tags" type="text" value={this.tag} onInput={(event) => this.handleChange(event)}  />
+              <button type="submit" class="tag-btn-add">
+                <ion-icon name="add" ></ion-icon>
+              </button>
+            </form>
+          <div class="tag-list">
+            {
+              this.tags.map(t => (
+                <div class="tag-outer">
+                  <div class="tag-inner">
+                    {t}
+                    <a class="tag-btn-remove" onClick={() => this.removeTag(t)}>
+                      <ion-icon name="close" ></ion-icon>
+                    </a>
+                  </div>
                 </div>
-              </div>
-            ))
-          }
+              ))
+            }
+          </div>
         </div>
-        <form onSubmit={(e) => this.handleSubmit(e)} class="tag-input">
-          <input placeholder="tags" type="text" value={this.tag} onInput={(event) => this.handleChange(event)}  />
-          <button type="submit" class="tag-btn-add">
-            <ion-icon name="add" ></ion-icon>
-          </button>
-        </form>
-      </div>
-    )
+      )
+    } else {
+      return (
+        <div>
+          <div class="tag-list">
+            {
+              this.tags.map(t => (
+                <div class="tag-outer">
+                  <div class="tag-inner">
+                    {t}
+                    <a class="tag-btn-remove" onClick={() => this.removeTag(t)}>
+                      <ion-icon name="close" ></ion-icon>
+                    </a>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+            <form onSubmit={(e) => this.handleSubmit(e)} class="tag-input">
+              <input placeholder="tags" type="text" value={this.tag} onInput={(event) => this.handleChange(event)}  />
+              <button type="submit" class="tag-btn-add">
+                <ion-icon name="add" ></ion-icon>
+              </button>
+            </form>
+        </div>
+      )
+    }
   }
 }

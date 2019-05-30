@@ -3,6 +3,7 @@
     --tag-color: white;
     --tag-border-radius: 5px;
     --tag-input-width: 100px;
+    --tag-input-display: inline;
 }
 
 .tag-list {
@@ -26,7 +27,7 @@
 }
 
 .tag-input {
-    display: inline;
+    display: var(--tag-input-display);
     border-bottom: solid 1px;
     padding: 8px;
 }
