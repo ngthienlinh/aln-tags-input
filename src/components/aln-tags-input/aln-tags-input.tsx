@@ -43,7 +43,7 @@ export class AlnTagsInputComponent {
               <div class="tag-outer">
                 <div class="tag-inner">
                   {t}
-                  <a class="btn-tag" onClick={() => this.removeTag(t)}>
+                  <a class="tag-btn-remove" onClick={() => this.removeTag(t)}>
                     <ion-icon name="close" ></ion-icon>
                   </a>
                 </div>
@@ -53,6 +53,9 @@ export class AlnTagsInputComponent {
         </div>
         <form onSubmit={(e) => this.handleSubmit(e)} class="tag-input">
           <input placeholder="tags" type="text" value={this.tag} onInput={(event) => this.handleChange(event)}  />
+          <button type="submit" class="tag-btn-add">
+            <ion-icon name="add" ></ion-icon>
+          </button>
         </form>
       </div>
     )

@@ -2,6 +2,7 @@
     --tag-bg: green;
     --tag-color: white;
     --tag-border-radius: 5px;
+    --tag-input-width: 100px;
 }
 
 .tag-list {
@@ -26,18 +27,28 @@
 
 .tag-input {
     display: inline;
+    border-bottom: solid 1px;
+    padding: 8px;
 }
 
 .tag-input input {
     border: none;
-    border-bottom: solid 1px;
-    padding: 8px;
+    width: var(--tag-input-width);
 }
 
 .tag-input input:focus {
     outline: none;
 }
 
-.btn-tag {
+.tag-btn-remove {
     margin-left: 5px
+}
+
+.tag-btn-add {
+    background: none;
+    border: none;
+}
+
+.tag-btn-add:focus {
+    outline: none;
 }
