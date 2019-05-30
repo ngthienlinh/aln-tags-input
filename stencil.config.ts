@@ -2,11 +2,11 @@ import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 
 export const config: Config = {
-  namespace: 'aln-controls',
+  namespace: 'aln-tags-input',
   outputTargets: [
     {
       type: 'dist',
-      esmLoaderPath: '../loader'
+      // esmLoaderPath: '../loader'
     },
     {
       type: 'docs-readme'
