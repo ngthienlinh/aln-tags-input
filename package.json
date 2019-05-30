@@ -9,7 +9,7 @@
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/aln-tags-input/aln-tags-input.js",
+  "unpkg": "dist/aln-controls/aln-controls.js",
   "files": [
     "dist/"
   ],
