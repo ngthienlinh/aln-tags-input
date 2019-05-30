@@ -43,7 +43,7 @@ defineCustomElements(window);
 ** Original doc: https://stenciljs.com/docs/angular **
 
 ### Script tag
-- Put a script tag similar to this `<script src='https://unpkg.com/aln-tags-input@0.0.5/dist/aln-controls.js'></script>` in the head of your index.html
+- Put a script tag similar to this `<script src='https://unpkg.com/aln-tags-input@0.0.6/dist/aln-controls.js'></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
 
 ### Node Modules
