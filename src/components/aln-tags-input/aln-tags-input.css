@@ -4,6 +4,10 @@
     --tag-border-radius: 5px;
     --tag-input-width: 100px;
     --tag-input-display: inline;
+    --tag-btn-icon-size: 16px;
+    --tag-btn-icon-color: white;
+    --tag-btn-icon-remove-color: white;
+    --tag-btn-icon-add-color: black;
 }
 
 .tag-list {
@@ -52,4 +56,16 @@
 
 .tag-btn-add:focus {
     outline: none;
+}
+
+.tag-btn-icon {
+    width: var(--tag-btn-icon-size);
+}
+
+.tag-btn-remove .tag-btn-icon {
+    fill: var(--tag-btn-icon-remove-color)
+}
+
+.tag-btn-add .tag-btn-icon {
+    fill: var(--tag-btn-icon-add-color)
 }
