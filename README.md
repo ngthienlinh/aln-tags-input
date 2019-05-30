@@ -5,12 +5,12 @@ This is tags input web component built using Stencil. It works in any major fram
 ## Using this component
 
 ### Script tag
-- Put a script tag similar to this `<script src='https://unpkg.com/my-component@0.0.1/dist/mycomponent.js'></script>` in the head of your index.html
+- Put a script tag similar to this `<script src='https://unpkg.com/aln-tags-input@0.0.3/dist/aln-tags-input.js'></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
 
 ### Node Modules
 - Run `npm install aln-tags-input --save`
-- Put a script tag similar to this `<script src='node_modules/aln-tags-input/dist/mycomponent.js'></script>` in the head of your index.html
+- Put a script tag similar to this `<script src='node_modules/aln-tags-input/dist/aln-tags-input.js'></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
 
 ### In a stencil-starter app
