@@ -26,5 +26,11 @@
   "license": "MIT",
   "dependencies": {
     "ionicons": "^4.5.8"
-  }
+  },
+  "keywords": [
+    "Web components",
+    "Tag",
+    "Ionic",
+    "Stencil"
+  ]
 }
