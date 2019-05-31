@@ -43,7 +43,7 @@ defineCustomElements(window);
 *Reference Stencil doc for more framework integration: https://stenciljs.com/docs/overview*
 
 ### Script tag
-1. Put a script tag similar to this `<script src='https://unpkg.com/aln-tags-input@0.0.8/dist/aln-controls.js'></script>` in the head of your index.html
+1. Put a script tag similar to this `<script src='https://unpkg.com/aln-tags-input@0.0.9/dist/aln-controls.js'></script>` in the head of your index.html
 2. Then you can use the element anywhere in your template, JSX, html etc
 
 ## Using this component
