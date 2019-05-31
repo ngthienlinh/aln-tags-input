@@ -10,6 +10,7 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 export namespace Components {
   interface AlnTagsInput {
+    'clear': () => Promise<void>;
     'tags': string[];
     'tagsBelow': boolean;
   }

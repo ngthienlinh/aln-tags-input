@@ -1,4 +1,4 @@
-import { Component, Prop, h, State } from '@stencil/core';
+import { Component, Prop, h, State, Method } from '@stencil/core';
 
 @Component({
   tag: 'aln-tags-input',
@@ -15,6 +15,12 @@ export class AlnTagsInputComponent {
   @Prop() tags: string[] = [];
 
   @Prop() tagsBelow: boolean = false;
+
+  @Method()
+  async clear() {
+    // return Promise.resolve(42);
+    this.tags = []
+  }
 
   handleChange(event) {
     this.tag = event.target.value;

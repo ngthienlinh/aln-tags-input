@@ -7,16 +7,31 @@
 
   <script type="module" src="/build/aln-controls.esm.js"></script>
   <script nomodule src="/build/aln-controls.js"></script>
-  <!-- <style>
-    aln-tags-input {
-      --tag-input-width: calc(100% - 26px);;
+  <style>
+    .default-style {
+      --tag-bg: green;
+      --tag-color: white;
+      --tag-border-radius: 5px;
+      --tag-input-width: 100px;
+      --tag-input-display: inline;
+      --tag-btn-icon-size: 16px;
+      --tag-btn-icon-remove-color: white;
+      --tag-btn-icon-add-color: black;
+    }
+
+    .display-block {
+      --tag-input-width: calc(100% - 30px);;
       --tag-input-display: block;
     }
-  </style> -->
+  </style>
 </head>
 <body>
 
-  <aln-tags-input tags-below="false"></aln-tags-input>
+  <!-- <aln-tags-input tags-below="false"></aln-tags-input> -->
+
+  <aln-tags-input tags-below="false" class="default-style"></aln-tags-input>
+
+  <aln-tags-input tags-below="true" class="display-block"></aln-tags-input>
 
 </body>
 </html>

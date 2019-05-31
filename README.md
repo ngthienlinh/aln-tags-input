@@ -2,11 +2,11 @@
 
 This is tags input web component built using Stencil. It works in any major framework or with no framework at all.
 
-## Using this component
+## Install this component
 
 ### Ionic4 + angular
-- Run `npm install aln-tags-input --save`
-- Include the CUSTOM_ELEMENTS_SCHEMA in the modules that use the components
+1. Run `npm install aln-tags-input --save`
+2. Include the CUSTOM_ELEMENTS_SCHEMA in the modules that use the components
 ```ts
 import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
@@ -22,7 +22,7 @@ import { AppComponent } from './app.component';
 })
 export class AppModule {}
 ```
-- Call defineCustomElements(window) from main.ts (or some other appropriate place)
+3. Call defineCustomElements(window) from main.ts (or some other appropriate place)
 ```ts
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
@@ -40,18 +40,61 @@ platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.log(err));
 defineCustomElements(window);
 ```
-**Original doc: https://stenciljs.com/docs/angular**
+*Reference Stencil doc for more framework integration: https://stenciljs.com/docs/overview*
 
 ### Script tag
-- Put a script tag similar to this `<script src='https://unpkg.com/aln-tags-input@0.0.6/dist/aln-controls.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
+1. Put a script tag similar to this `<script src='https://unpkg.com/aln-tags-input@0.0.6/dist/aln-controls.js'></script>` in the head of your index.html
+2. Then you can use the element anywhere in your template, JSX, html etc
 
-### Node Modules
-- Run `npm install aln-tags-input --save`
-- Put a script tag similar to this `<script src='node_modules/aln-tags-input/dist/aln-controls.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
+## Using this component
+Add the tag `<aln-tags-input>` to your html page. We style the component using css4 variables.
+```html
+...
+<style>
+  .default-style {
+    --tag-bg: green;
+    --tag-color: white;
+    --tag-border-radius: 5px;
+    --tag-input-width: 100px;
+    --tag-input-display: inline;
+    --tag-btn-icon-size: 16px;
+    --tag-btn-icon-remove-color: white;
+    --tag-btn-icon-add-color: black;
+  }
 
-### In a stencil-starter app
-- Run `npm install aln-tags-input --save`
-- Add an import to the npm packages `import aln-tags-input;`
-- Then you can use the element anywhere in your template, JSX, html etc
+  .display-block {
+    --tag-input-width: calc(100% - 30px);;
+    --tag-input-display: block;
+  }
+</style>
+...
+<aln-tags-input tags-below="false" class="default-style"></aln-tags-input>
+
+<aln-tags-input tags-below="true" class="display-block"></aln-tags-input>
+
+```
+Access it using ViewChild or ViewChildren
+```ts
+import {Component, ElementRef, ViewChild} from '@angular/core';
+import 'aln-tags-input'
+
+@Component({
+  selector: 'app-test',
+  template: '<div><aln-tags-input #tagsInput ></aln-tags-input><button (click)="clearTags()">Remove all tags</button></div>'
+})
+export class TestPage implements OnInit {
+
+  @ViewChild('tagsInput') tagsInputComponent: ElementRef<HTMLAlnTagsInputElement>;
+  
+  async clearTags() {
+    // Access component property
+    console.log(this.tagsInputComponent.nativeElement.tags)
+    // Call component method
+    await this.tagsInputComponent.nativeElement.clear();
+  }
+}
+```
+### Property
+- tags: array of tags
+### Method
+- clear(): remove all tags

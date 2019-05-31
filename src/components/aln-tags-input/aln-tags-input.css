@@ -5,7 +5,6 @@
     --tag-input-width: 100px;
     --tag-input-display: inline;
     --tag-btn-icon-size: 16px;
-    --tag-btn-icon-color: white;
     --tag-btn-icon-remove-color: white;
     --tag-btn-icon-add-color: black;
 }
@@ -27,7 +26,6 @@
     color: var(--tag-color);
     border-radius: var(--tag-border-radius);
     padding: 5px;
-    margin: 0 5px 0 0;
 }
 
 .tag-input {
