@@ -11,6 +11,8 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 export namespace Components {
   interface AlnTagsInput {
     'clear': () => Promise<void>;
+    'hideInput': boolean;
+    'readonly': boolean;
     'tags': string[];
     'tagsBelow': boolean;
   }
@@ -18,6 +20,8 @@ export namespace Components {
 
 declare namespace LocalJSX {
   interface AlnTagsInput extends JSXBase.HTMLAttributes {
+    'hideInput'?: boolean;
+    'readonly'?: boolean;
     'tags'?: string[];
     'tagsBelow'?: boolean;
   }

@@ -28,10 +28,19 @@
 <body>
 
   <!-- <aln-tags-input tags-below="false"></aln-tags-input> -->
-
-  <aln-tags-input tags-below="false" class="default-style"></aln-tags-input>
-
-  <aln-tags-input tags-below="true" class="display-block"></aln-tags-input>
-
+  <h4>default</h4>
+  <aln-tags-input tags-below="false" class="default-style" ></aln-tags-input>
+  <h4>readonly</h4>
+  <aln-tags-input tags-below="false" class="default-style" readonly="true"></aln-tags-input>
+  <h4>block input</h4>
+  <aln-tags-input name="preset" tags-below="true" class="display-block" hide-input="false"></aln-tags-input>
+  <h4>show tags only</h4>
+  <aln-tags-input name="preset" tags-below="true" class="display-block" hide-input="true"></aln-tags-input>
+  <script>
+    const tagsInputElems = document.getElementsByName('preset')
+    tagsInputElems.forEach(e => {
+      e.tags = ['this', 'is', 'a', 'test']
+    })
+  </script>
 </body>
 </html>

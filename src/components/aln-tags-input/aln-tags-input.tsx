@@ -16,6 +16,10 @@ export class AlnTagsInputComponent {
 
   @Prop() tagsBelow: boolean = false;
 
+  @Prop() readonly: boolean = false;
+
+  @Prop() hideInput: boolean = false;
+
   @Method()
   async clear() {
     // return Promise.resolve(42);
@@ -43,17 +47,33 @@ export class AlnTagsInputComponent {
   }
 
   render() {
+    // let input;
+    // if (this.readonly) {
+    //   input = <input placeholder="tags" type="text" value={this.tag} onInput={(event) => this.handleChange(event)} readonly />
+    // } else {
+    //   input = <input placeholder="tags" type="text" value={this.tag} onInput={(event) => this.handleChange(event)} />
+    // }
+
     if (this.tagsBelow) {
       return (
         <div>
+          {
+            !this.hideInput &&
             <form onSubmit={(e) => this.handleSubmit(e)} class="tag-input">
-              <input placeholder="tags" type="text" value={this.tag} onInput={(event) => this.handleChange(event)}  />
+              {
+                this.readonly 
+                ?
+                <input placeholder="tags" type="text" value={this.tag} onInput={(event) => this.handleChange(event)} readonly />
+                :
+                <input placeholder="tags" type="text" value={this.tag} onInput={(event) => this.handleChange(event)} />
+              }
               <button type="submit" class="tag-btn-add">
                 <a>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="tag-btn-icon"><path d="M416 277.333H277.333V416h-42.666V277.333H96v-42.666h138.667V96h42.666v138.667H416v42.666z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="tag-btn-icon"><path d="M416 277.333H277.333V416h-42.666V277.333H96v-42.666h138.667V96h42.666v138.667H416v42.666z"></path></svg>
                 </a>
               </button>
             </form>
+          }
           <div class="tag-list">
             {
               this.tags.map(t => (
@@ -87,14 +107,23 @@ export class AlnTagsInputComponent {
               ))
             }
           </div>
+          {
+            !this.hideInput &&
             <form onSubmit={(e) => this.handleSubmit(e)} class="tag-input">
-              <input placeholder="tags" type="text" value={this.tag} onInput={(event) => this.handleChange(event)}  />
+              {
+                this.readonly 
+                ?
+                <input placeholder="tags" type="text" value={this.tag} onInput={(event) => this.handleChange(event)} readonly />
+                :
+                <input placeholder="tags" type="text" value={this.tag} onInput={(event) => this.handleChange(event)} />
+              }
               <button type="submit" class="tag-btn-add">
                 <a>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="tag-btn-icon"><path d="M416 277.333H277.333V416h-42.666V277.333H96v-42.666h138.667V96h42.666v138.667H416v42.666z"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="tag-btn-icon"><path d="M416 277.333H277.333V416h-42.666V277.333H96v-42.666h138.667V96h42.666v138.667H416v42.666z"></path></svg>
                 </a>
               </button>
             </form>
+          }
         </div>
       )
     }
