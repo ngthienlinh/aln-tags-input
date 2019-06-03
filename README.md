@@ -47,32 +47,7 @@ defineCustomElements(window);
 2. Then you can use the element anywhere in your template, JSX, html etc
 
 ## Using this component
-Add the tag `<aln-tags-input>` to your html page. We style the component using css4 variables.
-```html
-...
-<style>
-  .default-style {
-    --tag-bg: green;
-    --tag-color: white;
-    --tag-border-radius: 5px;
-    --tag-input-width: 100px;
-    --tag-input-display: inline;
-    --tag-btn-icon-size: 16px;
-    --tag-btn-icon-remove-color: white;
-    --tag-btn-icon-add-color: black;
-  }
-
-  .display-block {
-    --tag-input-width: calc(100% - 30px);;
-    --tag-input-display: block;
-  }
-</style>
-...
-<aln-tags-input tags-below="false" class="default-style"></aln-tags-input>
-
-<aln-tags-input tags-below="true" class="display-block"></aln-tags-input>
-
-```
+### Ionic4 + angular
 Access it using ViewChild or ViewChildren
 ```ts
 import {Component, ElementRef, ViewChild} from '@angular/core';
@@ -94,6 +69,53 @@ export class TestPage implements OnInit {
   }
 }
 ```
+
+### Pure html + javascript
+Add the tag `<aln-tags-input>` to your html page. We style the component using css4 variables.
+```html
+...
+<style>
+  .default-style {
+    --tag-bg: green;
+    --tag-color: white;
+    --tag-border-radius: 5px;
+    --tag-input-width: 100px;
+    --tag-input-display: inline;
+    --tag-padding: 5px 8px;
+    --tag-btn-icon-size: 16px;
+    --tag-btn-icon-remove-color: white;
+    --tag-btn-icon-add-color: black;
+  }
+
+  .display-block {
+    --tag-input-width: calc(100% - 30px);;
+    --tag-input-display: block;
+  }
+</style>
+...
+<h4>default</h4>
+<aln-tags-input tags-below="false" class="default-style" ></aln-tags-input>
+<h4>readonly</h4>
+<aln-tags-input id="readonly" tags-below="false" class="default-style" readonly="true"></aln-tags-input>
+<h4>block input</h4>
+<aln-tags-input name="preset" tags-below="true" class="display-block" hide-input="false"></aln-tags-input>
+<h4>show tags only</h4>
+<aln-tags-input name="preset" tags-below="true" class="display-block" hide-input="true"></aln-tags-input>
+<h4>show tags only + readonly</h4>
+<aln-tags-input name="preset" tags-below="true" class="display-block" hide-input="true" readonly="true"></aln-tags-input>
+
+<script>
+  const tagReadonly = document.getElementById('readonly')
+  tagReadonly.tags = ['this', 'is', 'readonly']
+
+  const tagsInputElems = document.getElementsByName('preset')
+  tagsInputElems.forEach(e => {
+    e.tags = ['this', 'is', 'a', 'test']
+  })
+</script>
+
+```
+
 ### Property
 - tags: array of tags
 - tags-below: show tags below input

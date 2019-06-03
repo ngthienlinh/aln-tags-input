@@ -4,6 +4,7 @@
     --tag-border-radius: 5px;
     --tag-input-width: 100px;
     --tag-input-display: inline;
+    --tag-padding: 5px;
     --tag-btn-icon-size: 16px;
     --tag-btn-icon-remove-color: white;
     --tag-btn-icon-add-color: black;
@@ -25,7 +26,7 @@
     background: var(--tag-bg);
     color: var(--tag-color);
     border-radius: var(--tag-border-radius);
-    padding: 5px;
+    padding: var(--tag-padding);
 }
 
 .tag-input {
