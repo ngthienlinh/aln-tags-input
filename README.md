@@ -72,6 +72,7 @@ export class TestPage implements OnInit {
 
 ### Pure html + javascript
 Add the tag `<aln-tags-input>` to your html page. We style the component using css4 variables.
+Access it via javascript.
 ```html
 ...
 <style>
