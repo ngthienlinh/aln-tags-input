@@ -27,9 +27,10 @@
   "dependencies": {},
   "keywords": [
     "Web components",
-    "Tag",
+    "Tag input",
     "Ionic",
-    "Stencil"
+    "Stencil",
+    "Javascript"
   ],
   "author": {
     "name": "An Linh",

@@ -9,6 +9,8 @@
 
 | Property    | Attribute    | Description | Type       | Default |
 | ----------- | ------------ | ----------- | ---------- | ------- |
+| `hideInput` | `hide-input` |             | `boolean`  | `false` |
+| `readonly`  | `readonly`   |             | `boolean`  | `false` |
 | `tags`      | --           |             | `string[]` | `[]`    |
 | `tagsBelow` | `tags-below` |             | `boolean`  | `false` |
 
