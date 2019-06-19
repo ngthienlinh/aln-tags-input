@@ -2,6 +2,8 @@
 
 This is tags input web component built using Stencil. It works in any major framework or with no framework at all.
 
+![Sample](https://github.com/ngthienlinh/aln-tags-input/tree/master/assets/sample.png "Sample usages")
+
 ## Install this component
 
 ### Ionic4 + angular
